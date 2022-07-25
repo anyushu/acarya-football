@@ -37,15 +37,18 @@ export const Failure = ({ error }: CellFailureProps) => (
 )
 
 export const Success = ({ league }: CellSuccessProps<EditLeagueById>) => {
-  const [updateLeague, { loading, error }] = useMutation(UPDATE_LEAGUE_MUTATION, {
-    onCompleted: () => {
-      toast.success('League updated')
-      navigate(routes.leagues())
-    },
-    onError: (error) => {
-      toast.error(error.message)
-    },
-  })
+  const [updateLeague, { loading, error }] = useMutation(
+    UPDATE_LEAGUE_MUTATION,
+    {
+      onCompleted: () => {
+        toast.success('League updated')
+        navigate(routes.leagues())
+      },
+      onError: (error) => {
+        toast.error(error.message)
+      },
+    }
+  )
 
   const onSave = (input, id) => {
     updateLeague({ variables: { id, input } })
@@ -54,10 +57,17 @@ export const Success = ({ league }: CellSuccessProps<EditLeagueById>) => {
   return (
     <div className="rw-segment">
       <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">Edit League {league.id}</h2>
+        <h2 className="rw-heading rw-heading-secondary">
+          Edit League {league.id}
+        </h2>
       </header>
       <div className="rw-segment-main">
-        <LeagueForm league={league} onSave={onSave} error={error} loading={loading} />
+        <LeagueForm
+          league={league}
+          onSave={onSave}
+          error={error}
+          loading={loading}
+        />
       </div>
     </div>
   )

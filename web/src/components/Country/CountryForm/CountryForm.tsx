@@ -7,21 +7,8 @@ import {
   Submit,
 } from '@redwoodjs/forms'
 
-
-
 const CountryForm = (props) => {
   const onSubmit = (data) => {
-
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
     props.onSave(data, props?.country?.id)
   }
 
@@ -34,7 +21,7 @@ const CountryForm = (props) => {
           titleClassName="rw-form-error-title"
           listClassName="rw-form-error-list"
         />
-      
+
         <Label
           name="name_en"
           className="rw-label"
@@ -42,15 +29,14 @@ const CountryForm = (props) => {
         >
           Name en
         </Label>
-        
-          <TextField
-            name="name_en"
-            defaultValue={props.country?.name_en}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <TextField
+          name="name_en"
+          defaultValue={props.country?.name_en}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="name_en" className="rw-field-error" />
 
@@ -61,15 +47,14 @@ const CountryForm = (props) => {
         >
           Name ja
         </Label>
-        
-          <TextField
-            name="name_ja"
-            defaultValue={props.country?.name_ja}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <TextField
+          name="name_ja"
+          defaultValue={props.country?.name_ja}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="name_ja" className="rw-field-error" />
 
@@ -80,23 +65,19 @@ const CountryForm = (props) => {
         >
           Iso code
         </Label>
-        
-          <TextField
-            name="iso_code"
-            defaultValue={props.country?.iso_code}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <TextField
+          name="iso_code"
+          defaultValue={props.country?.iso_code}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="iso_code" className="rw-field-error" />
 
         <div className="rw-button-group">
-          <Submit
-            disabled={props.loading}
-            className="rw-button rw-button-blue"
-          >
+          <Submit disabled={props.loading} className="rw-button rw-button-blue">
             Save
           </Submit>
         </div>

@@ -66,20 +66,25 @@ const Country = ({ country }) => {
     <>
       <div className="rw-segment">
         <header className="rw-segment-header">
-          <h2 className="rw-heading rw-heading-secondary">Country {country.id} Detail</h2>
+          <h2 className="rw-heading rw-heading-secondary">
+            Country {country.id} Detail
+          </h2>
         </header>
         <table className="rw-table">
           <tbody>
             <tr>
               <th>Id</th>
               <td>{country.id}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Name en</th>
               <td>{country.name_en}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Name ja</th>
               <td>{country.name_ja}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Iso code</th>
               <td>{country.iso_code}</td>
             </tr>

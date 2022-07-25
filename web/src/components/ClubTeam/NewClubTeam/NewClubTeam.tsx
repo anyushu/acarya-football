@@ -13,15 +13,18 @@ const CREATE_CLUB_TEAM_MUTATION = gql`
 `
 
 const NewClubTeam = () => {
-  const [createClubTeam, { loading, error }] = useMutation(CREATE_CLUB_TEAM_MUTATION, {
-    onCompleted: () => {
-      toast.success('ClubTeam created')
-      navigate(routes.clubTeams())
-    },
-    onError: (error) => {
-      toast.error(error.message)
-    },
-  })
+  const [createClubTeam, { loading, error }] = useMutation(
+    CREATE_CLUB_TEAM_MUTATION,
+    {
+      onCompleted: () => {
+        toast.success('ClubTeam created')
+        navigate(routes.clubTeams())
+      },
+      onError: (error) => {
+        toast.error(error.message)
+      },
+    }
+  )
 
   const onSave = (input) => {
     createClubTeam({ variables: { input } })

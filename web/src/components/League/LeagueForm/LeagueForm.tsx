@@ -9,30 +9,14 @@ import {
   Submit,
 } from '@redwoodjs/forms'
 
-
 const formatDatetime = (value) => {
   if (value) {
     return value.replace(/:\d{2}\.\d{3}\w/, '')
   }
 }
 
-
 const LeagueForm = (props) => {
   const onSubmit = (data) => {
-
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
     props.onSave(data, props?.league?.id)
   }
 
@@ -45,7 +29,7 @@ const LeagueForm = (props) => {
           titleClassName="rw-form-error-title"
           listClassName="rw-form-error-list"
         />
-      
+
         <Label
           name="level"
           className="rw-label"
@@ -53,15 +37,14 @@ const LeagueForm = (props) => {
         >
           Level
         </Label>
-        
-          <NumberField
-            name="level"
-            defaultValue={props.league?.level}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <NumberField
+          name="level"
+          defaultValue={props.league?.level}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="level" className="rw-field-error" />
 
@@ -72,15 +55,14 @@ const LeagueForm = (props) => {
         >
           Name en
         </Label>
-        
-          <TextField
-            name="name_en"
-            defaultValue={props.league?.name_en}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <TextField
+          name="name_en"
+          defaultValue={props.league?.name_en}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="name_en" className="rw-field-error" />
 
@@ -91,15 +73,14 @@ const LeagueForm = (props) => {
         >
           Name ja
         </Label>
-        
-          <TextField
-            name="name_ja"
-            defaultValue={props.league?.name_ja}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <TextField
+          name="name_ja"
+          defaultValue={props.league?.name_ja}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="name_ja" className="rw-field-error" />
 
@@ -110,23 +91,19 @@ const LeagueForm = (props) => {
         >
           Date established
         </Label>
-        
-          <DatetimeLocalField
-            name="date_established"
-            defaultValue={formatDatetime(props.league?.date_established)}
-            className="rw-input"
-            errorClassName="rw-input rw-input-error"
-            validation={{ required: true }}
-          />
-        
+
+        <DatetimeLocalField
+          name="date_established"
+          defaultValue={formatDatetime(props.league?.date_established)}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
 
         <FieldError name="date_established" className="rw-field-error" />
 
         <div className="rw-button-group">
-          <Submit
-            disabled={props.loading}
-            className="rw-button rw-button-blue"
-          >
+          <Submit disabled={props.loading} className="rw-button rw-button-blue">
             Save
           </Submit>
         </div>

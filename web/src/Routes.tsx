@@ -10,10 +10,8 @@
 import { Set, Router, Route } from '@redwoodjs/router'
 
 import ClubTeamsLayout from 'src/layouts/ClubTeamsLayout'
-
-import LeaguesLayout from 'src/layouts/LeaguesLayout'
-
 import CountriesLayout from 'src/layouts/CountriesLayout'
+import LeaguesLayout from 'src/layouts/LeaguesLayout'
 
 const Routes = () => {
   return (

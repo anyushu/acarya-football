@@ -13,15 +13,18 @@ const CREATE_LEAGUE_MUTATION = gql`
 `
 
 const NewLeague = () => {
-  const [createLeague, { loading, error }] = useMutation(CREATE_LEAGUE_MUTATION, {
-    onCompleted: () => {
-      toast.success('League created')
-      navigate(routes.leagues())
-    },
-    onError: (error) => {
-      toast.error(error.message)
-    },
-  })
+  const [createLeague, { loading, error }] = useMutation(
+    CREATE_LEAGUE_MUTATION,
+    {
+      onCompleted: () => {
+        toast.success('League created')
+        navigate(routes.leagues())
+      },
+      onError: (error) => {
+        toast.error(error.message)
+      },
+    }
+  )
 
   const onSave = (input) => {
     createLeague({ variables: { input } })

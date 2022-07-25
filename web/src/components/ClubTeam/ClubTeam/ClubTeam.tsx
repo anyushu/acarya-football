@@ -66,20 +66,25 @@ const ClubTeam = ({ clubTeam }) => {
     <>
       <div className="rw-segment">
         <header className="rw-segment-header">
-          <h2 className="rw-heading rw-heading-secondary">ClubTeam {clubTeam.id} Detail</h2>
+          <h2 className="rw-heading rw-heading-secondary">
+            ClubTeam {clubTeam.id} Detail
+          </h2>
         </header>
         <table className="rw-table">
           <tbody>
             <tr>
               <th>Id</th>
               <td>{clubTeam.id}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Name en</th>
               <td>{clubTeam.name_en}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Name ja</th>
               <td>{clubTeam.name_ja}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Date established</th>
               <td>{timeTag(clubTeam.date_established)}</td>
             </tr>

@@ -13,15 +13,18 @@ const CREATE_COUNTRY_MUTATION = gql`
 `
 
 const NewCountry = () => {
-  const [createCountry, { loading, error }] = useMutation(CREATE_COUNTRY_MUTATION, {
-    onCompleted: () => {
-      toast.success('Country created')
-      navigate(routes.countries())
-    },
-    onError: (error) => {
-      toast.error(error.message)
-    },
-  })
+  const [createCountry, { loading, error }] = useMutation(
+    CREATE_COUNTRY_MUTATION,
+    {
+      onCompleted: () => {
+        toast.success('Country created')
+        navigate(routes.countries())
+      },
+      onError: (error) => {
+        toast.error(error.message)
+      },
+    }
+  )
 
   const onSave = (input) => {
     createCountry({ variables: { input } })

@@ -35,15 +35,18 @@ export const Failure = ({ error }: CellFailureProps) => (
 )
 
 export const Success = ({ country }: CellSuccessProps<EditCountryById>) => {
-  const [updateCountry, { loading, error }] = useMutation(UPDATE_COUNTRY_MUTATION, {
-    onCompleted: () => {
-      toast.success('Country updated')
-      navigate(routes.countries())
-    },
-    onError: (error) => {
-      toast.error(error.message)
-    },
-  })
+  const [updateCountry, { loading, error }] = useMutation(
+    UPDATE_COUNTRY_MUTATION,
+    {
+      onCompleted: () => {
+        toast.success('Country updated')
+        navigate(routes.countries())
+      },
+      onError: (error) => {
+        toast.error(error.message)
+      },
+    }
+  )
 
   const onSave = (input, id) => {
     updateCountry({ variables: { id, input } })
@@ -52,10 +55,17 @@ export const Success = ({ country }: CellSuccessProps<EditCountryById>) => {
   return (
     <div className="rw-segment">
       <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">Edit Country {country.id}</h2>
+        <h2 className="rw-heading rw-heading-secondary">
+          Edit Country {country.id}
+        </h2>
       </header>
       <div className="rw-segment-main">
-        <CountryForm country={country} onSave={onSave} error={error} loading={loading} />
+        <CountryForm
+          country={country}
+          onSave={onSave}
+          error={error}
+          loading={loading}
+        />
       </div>
     </div>
   )
