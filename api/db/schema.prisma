@@ -10,7 +10,8 @@ generator client {
 
 model Country {
   id       Int    @id @default(autoincrement())
-  name     String
+  name_en  String
+  name_ja  String
   iso_code String
 }
 
